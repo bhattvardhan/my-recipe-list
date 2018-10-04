@@ -5,6 +5,8 @@ import {
   removeIngredient
 } from "./ingredients";
 
+const recipeId = location.hash.substring(1);
+
 const generateRecipeDOM = recipe => {
   const recipeEl = document.createElement("a");
   const recipeTitleEl = document.createElement("p");
@@ -48,7 +50,7 @@ const generateIngredientDOM = ingredient => {
   containerElement.appendChild(selectIngredientCheckbox);
   selectIngredientCheckbox.addEventListener("change", () => {
     toggleIngredient(ingredient.id);
-    renderIngredients();
+    renderIngredients(recipeId);
   });
 
   const ingredientTextEl = document.createElement("span");

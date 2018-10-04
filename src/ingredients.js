@@ -32,26 +32,6 @@ const removeIngredient = id => {
   }
 };
 
-const updateIngredient = (id, updates) => {
-  const ingredient = ingredients.find(ingredient => ingredient.id === id);
-
-  if (!ingredient) {
-    return;
-  }
-
-  if (typeof updates.title === "string") {
-    ingredient.title = updates.title;
-  }
-
-  if (typeof updates.instructions === "string") {
-    ingredient.instructions = updates.instructions;
-  }
-
-  saveingredients();
-
-  return ingredient;
-};
-
 const toggleIngredient = id => {
   const ingredient = ingredients.find(ingredient => ingredient.id === id);
   if (ingredient) {
@@ -65,7 +45,6 @@ ingredients = loadIngredients();
 export {
   createIngredient,
   getIngredients,
-  updateIngredient,
   removeIngredient,
   toggleIngredient
 };

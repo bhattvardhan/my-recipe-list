@@ -1,10 +1,6 @@
 import { initializeRecipePage, renderIngredients } from "./views";
 import { updateRecipe, removeRecipe } from "./recipes";
-import {
-  updateIngredient,
-  removeIngredient,
-  createIngredient
-} from "./ingredients";
+import { removeIngredient, createIngredient } from "./ingredients";
 
 const recipeTitleEl = document.querySelector("#recipe-title");
 const recipeInstructionsEl = document.querySelector("#recipe-instructions");
@@ -27,7 +23,7 @@ ingredientForm.addEventListener("submit", e => {
   const newIngredient = e.target.elements.newIngredient.value.trim();
   if (newIngredient.length > 0) {
     createIngredient(newIngredient);
-      renderIngredients(recipeId);
+    renderIngredients(recipeId);
     e.target.elements.newIngredient.value = "";
   }
 });

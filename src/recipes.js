@@ -1,4 +1,5 @@
 import uuidv4 from "uuid/v4";
+import { removeIngredient } from "./ingredients";
 
 let recipes = [];
 
