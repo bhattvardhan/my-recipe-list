@@ -2,7 +2,7 @@ import { initializeRecipePage } from "./views";
 import { updateRecipe, removeRecipe } from "./recipes";
 
 const recipeTitleEl = document.querySelector("#recipe-title");
-const recipeInstructionsEl = document.querySelector("recipe-instructions");
+const recipeInstructionsEl = document.querySelector("#recipe-instructions");
 const recipeId = location.hash.substring(1);
 
 initializeRecipePage(recipeId);

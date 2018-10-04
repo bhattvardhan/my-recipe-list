@@ -11,7 +11,7 @@ const generateRecipeDOM = recipe => {
   }
 
   recipeEl.appendChild(recipeTitleEl);
-  recipeEl.setAttribute("href", `/recipe-details#${recipe.id}`);
+  recipeEl.setAttribute("href", `edit.html#${recipe.id}`);
 
   return recipeEl;
 };

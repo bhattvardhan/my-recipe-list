@@ -2,6 +2,15 @@ import uuidv4 from "uuid/v4";
 
 let recipes = [];
 
+const loadRecipes = () => {
+  const recipesJSON = localStorage.getItem("recipes");
+  try {
+    return recipesJSON ? JSON.parse(recipesJSON) : [];
+  } catch (e) {
+    return [];
+  }
+};
+
 const getRecipes = () => recipes;
 
 const saveRecipes = () => {
@@ -49,5 +58,7 @@ const updateRecipe = (id, updates) => {
 
   return recipe;
 };
+
+recipes = loadRecipes();
 
 export { createRecipe, getRecipes, updateRecipe, removeRecipe };
