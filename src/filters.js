@@ -1,12 +1,17 @@
 const filters = {
-  searchText: ""
+  searchText: "",
+  isAvailable: false
 };
 
 const getFilters = () => filters;
 
-const setFilters = updates => {
-  if (typeof updates.searchText === "string") {
-    filters.searchText = updates.searchText;
+const setFilters = ({ searchText, isAvailable }) => {
+  if (typeof searchText === "string") {
+    searchText = searchText;
+  }
+
+  if (typeof isAvailable === "boolean") {
+    isAvailable = isAvailable;
   }
 };
 

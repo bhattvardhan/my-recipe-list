@@ -18,9 +18,11 @@
             <input type="text" placeholder="Recipe Title" id="recipe-title">
             <textarea id="recipe-instructions" cols="30" rows="10"></textarea>
             <h2 class="ingredient-content-title">Ingredients</h2>
+            <form id="ingredient-form">
+                <input type="text" placeholder="Add ingredient" name="newIngredient" class="input">
+                <button class="button">Add Ingredient</button>
+            </form>
             <div class="ingredients" id="ingredient-list"></div>
-            <input type="text" placeholder="Add ingredient">
-            <input type="button" value="Add ingredient" id="add-ingredient">
             <h2 class="ingredient-content-title">Danger Zone</h2>
             <input type="button" value="Delete recipe" id="delete-recipe">
         </div>
