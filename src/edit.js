@@ -13,7 +13,6 @@ const removeRecipeEl = document.querySelector("#delete-recipe");
 const recipeId = location.hash.substring(1);
 
 initializeRecipePage(recipeId);
-renderIngredients();
 
 recipeTitleEl.addEventListener("input", e => {
   updateRecipe(recipeId, { title: e.target.value });

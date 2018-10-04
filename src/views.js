@@ -68,13 +68,15 @@ const generateIngredientDOM = ingredient => {
   return ingredientEl;
 };
 
-const renderIngredients = () => {
+const renderIngredients = id => {
   const ingredientListEl = document.querySelector("#ingredient-list");
   ingredientListEl.innerHTML = "";
 
   if (getIngredients().length > 0) {
     getIngredients().forEach(ingredient => {
-      ingredientListEl.appendChild(generateIngredientDOM(ingredient));
+      if (ingredient.id === id) {
+        ingredientListEl.appendChild(generateIngredientDOM(ingredient));
+      }
     });
   } else {
     const emptyMessage = document.createElement("p");
@@ -96,6 +98,8 @@ const initializeRecipePage = id => {
 
   recipeTitleEl.value = recipe.title;
   recipeInstructionsEl.value = recipe.instructions;
+
+  renderIngredients(id);
 };
 
 export { renderRecipes, initializeRecipePage, renderIngredients };
