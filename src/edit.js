@@ -27,7 +27,7 @@ ingredientForm.addEventListener("submit", e => {
   const newIngredient = e.target.elements.newIngredient.value.trim();
   if (newIngredient.length > 0) {
     createIngredient(newIngredient);
-    renderIngredients();
+      renderIngredients(recipeId);
     e.target.elements.newIngredient.value = "";
   }
 });
